@@ -1,0 +1,149 @@
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/transContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/colorSc" />
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Relationship Meter"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/colorPutih"/>
+
+        <TextView
+            android:id="@+id/tvSubJudul"
+            android:layout_below="@+id/tvJudul"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Measure Your Relationship Chemistry"
+            android:textColor="@color/colorPutih"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:id="@+id/llQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tvSubJudul"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="-10dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPutih"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvNumber"
+                        android:text="Question 1/10"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorInfo"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvQuestion"
+                        android:text="What is your partner full name?"
+                        android:lines="3"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorSc"
+                        android:layout_above="@+id/pbTime"/>
+
+                    <ProgressBar
+                        android:id="@+id/pbTime"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:indeterminate="false"
+                        android:max="100"
+                        android:minHeight="20dp"
+                        android:progress="100"
+                        android:progressBackgroundTint="@color/colorPrimaryDark"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="-10dp"/>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardBackgroundColor="@color/colorPutih"
+                card_view:cardCornerRadius="10dp"
+                card_view:cardElevation="5dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <EditText
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/etAnswer"
+                        android:layout_width="match_parent"
+                        android:hint="Your Answer"
+                        android:layout_height="wrap_content"
+                        android:inputType="textVisiblePassword"
+                        android:textColor="@color/colorInfo"
+                        android:textSize="22sp"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Submit"
+                android:textSize="18sp"
+                android:id="@+id/btSubmit"
+                android:background="@drawable/hint_background"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorPutih"
+                android:textAllCaps="false"
+                android:onClick="questionNext"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
