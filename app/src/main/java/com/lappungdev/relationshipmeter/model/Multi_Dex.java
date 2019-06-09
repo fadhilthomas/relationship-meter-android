@@ -2,7 +2,8 @@ package com.lappungdev.relationshipmeter.model;
 
 import android.app.Application;
 import android.content.Context;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
 
 public class Multi_Dex extends Application {
     @Override

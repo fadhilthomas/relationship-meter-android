@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import com.lappungdev.relationshipmeter.model.Question;
 
@@ -27,8 +26,8 @@ public class DbHelper extends SQLiteOpenHelper {
     private SQLiteDatabase dbase;
     private int rowCount = 0;
 
-    public DbHelper(Context context){
-        super(context,DB_NAME,null,DB_VERSION);
+    public DbHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
@@ -40,39 +39,39 @@ public class DbHelper extends SQLiteOpenHelper {
     }
 
     private void addQuestions() {
-        String coupleQ[][] = {
-                {"Siapa nama lengkapmu?","Siapa nama lengkap pasanganmu?"},
-                {"Siapa nama lengkap pasanganmu?","Siapa nama lengkapmu?"},
-                {"Kapan tanggal jadian kalian?","Kapan tanggal jadian kalian?"},
-                {"Di mana kalian pertama kali bertemu?","Di mana kalian pertama kali bertemu?"}
+        String[][] coupleQ = {
+                {"Siapa nama lengkapmu?", "Siapa nama lengkap pasanganmu?"},
+                {"Siapa nama lengkap pasanganmu?", "Siapa nama lengkapmu?"},
+                {"Kapan tanggal jadian kalian?", "Kapan tanggal jadian kalian?"},
+                {"Di mana kalian pertama kali bertemu?", "Di mana kalian pertama kali bertemu?"}
         };
-        for (String q[] : coupleQ) {
+        for (String[] q : coupleQ) {
             this.addQuestionToDB(new Question(q[0], q[1]));
         }
     }
 
-    private void addQuestionToDB(Question q){
+    private void addQuestionToDB(Question q) {
         ContentValues values = new ContentValues();
         values.put(KEY_QUES, q.getQuestion());
         dbase.insert(DB_TABLE, null, values);
     }
 
-    public List<Question> getAllQuestions(){
-        List <Question> questionList = new ArrayList<Question>();
+    public List<Question> getAllQuestions() {
+        List<Question> questionList = new ArrayList<>();
 
         dbase = this.getReadableDatabase();
         String selectQuery = "SELECT * FROM " + DB_TABLE;
-        Cursor cursor = dbase.rawQuery(selectQuery,null);
+        Cursor cursor = dbase.rawQuery(selectQuery, null);
         rowCount = cursor.getCount();
 
-        if(cursor.moveToFirst()){
-            do{
+        if (cursor.moveToFirst()) {
+            do {
                 Question q = new Question();
                 q.setId(cursor.getInt(0));
                 q.setQuestion(cursor.getString(1));
                 q.setPairQuestion(cursor.getString(2));
                 questionList.add(q);
-            }while (cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         return questionList;
     }
@@ -80,11 +79,11 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS "+ DB_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + DB_TABLE);
         onCreate(db);
     }
 
-    public int getRowCount(){
+    public int getRowCount() {
         return rowCount;
     }
 

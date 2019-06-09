@@ -2,13 +2,8 @@ package com.lappungdev.relationshipmeter.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Build;
-import android.os.Handler;
-import android.support.annotation.RequiresApi;
-import android.support.transition.TransitionManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.CardView;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,6 +12,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.transition.TransitionManager;
 
 import com.lappungdev.relationshipmeter.R;
 
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView ivLogoID;
     CardView cvCouple, cvFamiliy, cvFriend;
     String name = "";
+    boolean doubleBackToExitPressedOnce = false;
     private boolean visible;
 
     @Override
@@ -78,8 +78,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    boolean doubleBackToExitPressedOnce = false;
-
     @Override
     public void onBackPressed() {
         if (doubleBackToExitPressedOnce) {
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                doubleBackToExitPressedOnce=false;
+                doubleBackToExitPressedOnce = false;
             }
         }, 2000);
     }
@@ -123,18 +121,18 @@ public class MainActivity extends AppCompatActivity {
         loadName();
     }
 
-    private void saveName(String name){
-        SharedPreferences sharedPref= getSharedPreferences("name", 0);
+    private void saveName(String name) {
+        SharedPreferences sharedPref = getSharedPreferences("name", 0);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("name", name);
         editor.apply();
     }
 
-    private void loadName(){
+    private void loadName() {
         SharedPreferences sharedPref = getSharedPreferences("name", 0);
-        name = sharedPref.getString("name","");
+        name = sharedPref.getString("name", "");
         tvName = findViewById(R.id.tvName);
-        tvName.setText("Hi, " + name +  " ...");
+        tvName.setText("Hi, " + name + " ...");
     }
 
     public void gotoID(int id) {
@@ -161,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                 llMain.setVisibility(visible ? View.GONE : View.VISIBLE);
                 llRoom.setVisibility(visible ? View.VISIBLE : View.GONE);
             }
-        },500);
+        }, 500);
         visible = false;
     }
 
@@ -177,11 +175,11 @@ public class MainActivity extends AppCompatActivity {
                 llMain.setVisibility(visible ? View.VISIBLE : View.GONE);
                 llRoom.setVisibility(visible ? View.GONE : View.VISIBLE);
             }
-        },500);
+        }, 500);
         visible = false;
     }
 
-    public void gotoQuestion(){
+    public void gotoQuestion() {
         startActivity(new Intent(this, QuestionActivity.class));
     }
 }

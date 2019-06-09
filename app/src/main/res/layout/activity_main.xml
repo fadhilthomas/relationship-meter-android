@@ -1,7 +1,7 @@
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
 
     <RelativeLayout
         android:id="@+id/transContainer"
@@ -17,26 +17,26 @@
             android:id="@+id/tvJudul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Relationship Meter"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:layout_marginTop="15dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="20dp"
-            android:textColor="@color/colorPutih"/>
+            android:text="Relationship Meter"
+            android:textColor="@color/colorPutih"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tvSubJudul"
-            android:layout_below="@+id/tvJudul"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="50dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/tvJudul"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="50dp"
             android:text="Measure Your Relationship Chemistry"
             android:textColor="@color/colorPutih"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <LinearLayout
 
@@ -44,12 +44,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tvSubJudul"
-            android:orientation="vertical"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical">
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="145dp"
                 android:layout_marginTop="-10dp"
@@ -65,96 +64,96 @@
                     android:padding="20dp">
 
                     <TextView
+                        android:id="@+id/tvName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tvName"
                         android:text="Hi, Fadhil"
-                        android:textSize="20sp"
                         android:textColor="@color/colorSc3"
-                        android:textStyle="bold"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <EditText
-                        android:visibility="gone"
                         android:id="@+id/etName"
                         android:layout_width="150dp"
-                        android:hint="Type your name ..."
                         android:layout_height="40dp"
-                        android:textSize="16sp"/>
+                        android:hint="Type your name ..."
+                        android:textSize="16sp"
+                        android:visibility="gone" />
 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_alignParentEnd="true"
-                        android:src="@drawable/chat_main"/>
+                        android:src="@drawable/chat_main" />
 
                     <Button
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:text="Edit"
-                        android:textSize="16sp"
                         android:id="@+id/btChange"
-                        android:background="@drawable/hint_background"
-                        android:textColor="@color/colorPutih"
-                        android:onClick="change"
-                        android:textAllCaps="false"
-                        android:layout_alignParentBottom="true"/>
-                    <Button
-                        android:visibility="gone"
                         android:layout_width="120dp"
                         android:layout_height="40dp"
-                        android:text="Save"
-                        android:textSize="16sp"
-                        android:id="@+id/btSave"
+                        android:layout_alignParentBottom="true"
                         android:background="@drawable/hint_background"
-                        android:textColor="@color/colorPutih"
-                        android:onClick="save"
+                        android:onClick="change"
+                        android:text="Edit"
                         android:textAllCaps="false"
-                        android:layout_alignParentBottom="true"/>
+                        android:textColor="@color/colorPutih"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btSave"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/hint_background"
+                        android:onClick="save"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPutih"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tvRelationTitle"
-                android:text="Choose Relationship"
-                android:textSize="18sp"
                 android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:text="Choose Relationship"
                 android:textColor="@color/colorSc3"
-                android:textStyle="bold"/>
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
                 android:text="Choose Your Relationship to be Measured"
                 android:textColor="@color/colorInfo"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp">
 
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cvCouple"
+                <androidx.cardview.widget.CardView
                     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="110dp"
+                    android:id="@+id/cvCouple"
+                    android:layout_width="130dp"
                     android:layout_height="130dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    card_view:cardBackgroundColor="@color/colorPutih"
-                    card_view:cardCornerRadius="10dp"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
                     android:layout_alignParentStart="true"
                     android:clickable="true"
-                    android:focusable="true">
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="@color/colorPutih"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -163,74 +162,36 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/couple"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/couple" />
 
                         <TextView
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
                             android:text="Couple"
                             android:textAlignment="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorInfo"/>
+                            android:textColor="@color/colorInfo"
+                            android:textSize="16sp" />
 
                     </RelativeLayout>
 
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                     android:id="@+id/cvFamily"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="110dp"
+                    android:layout_width="130dp"
                     android:layout_height="130dp"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    card_view:cardBackgroundColor="@color/colorPutih"
-                    card_view:cardCornerRadius="10dp"
-                    card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
                     android:layout_centerHorizontal="true"
                     android:clickable="true"
-                    android:focusable="true">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/maternity"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"/>
-
-                        <TextView
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Family"
-                            android:textAlignment="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorInfo"/>
-
-                    </RelativeLayout>
-
-                </android.support.v7.widget.CardView>
-                <android.support.v7.widget.CardView
-                    android:id="@+id/cvFriend"
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:layout_width="110dp"
-                    android:layout_height="130dp"
+                    android:focusable="true"
                     android:foreground="?android:attr/selectableItemBackground"
                     card_view:cardBackgroundColor="@color/colorPutih"
                     card_view:cardCornerRadius="10dp"
                     card_view:cardElevation="5dp"
-                    card_view:cardUseCompatPadding="true"
-                    android:layout_alignParentEnd="true"
-                    android:clickable="true"
-                    android:focusable="true">
+                    card_view:cardUseCompatPadding="true">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -239,40 +200,77 @@
                         <ImageView
                             android:layout_width="60dp"
                             android:layout_height="60dp"
-                            android:src="@drawable/support"
                             android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"/>
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/maternity" />
 
                         <TextView
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginBottom="5dp"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Friendship"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:text="Family"
                             android:textAlignment="center"
-                            android:textSize="16sp"
-                            android:textColor="@color/colorInfo"/>
+                            android:textColor="@color/colorInfo"
+                            android:textSize="16sp" />
 
                     </RelativeLayout>
 
-                </android.support.v7.widget.CardView>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/cvFriend"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_alignParentEnd="true"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    card_view:cardBackgroundColor="@color/colorPutih"
+                    card_view:cardCornerRadius="10dp"
+                    card_view:cardElevation="5dp"
+                    card_view:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/support" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="5dp"
+                            android:text="Friendship"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorInfo"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
 
             </RelativeLayout>
 
         </LinearLayout>
 
         <LinearLayout
-            android:visibility="gone"
             android:id="@+id/llRoom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/tvSubJudul"
-            android:orientation="vertical"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:visibility="gone">
 
-            <android.support.v7.widget.CardView
-                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 android:layout_marginTop="-10dp"
@@ -288,70 +286,70 @@
                     android:padding="20dp">
 
                     <TextView
+                        android:id="@+id/tvID"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/tvID"
                         android:text="Your Ses ID: "
-                        android:textSize="20sp"
                         android:textColor="@color/colorSc3"
-                        android:textStyle="bold"/>
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                     <EditText
-                        android:layout_marginTop="10dp"
-                        android:layout_below="@+id/tvID"
                         android:id="@+id/etTypeID"
                         android:layout_width="wrap_content"
-                        android:hint="Type your partner Ses ID"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvID"
+                        android:layout_marginTop="10dp"
+                        android:hint="Type your partner Ses ID"
                         android:lines="1"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp" />
 
                     <TextView
-                        android:layout_below="@+id/etTypeID"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginEnd="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_below="@+id/etTypeID"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
                         android:text="If your partner try to pair, just wait."
                         android:textColor="@color/colorInfo"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
 
                     <ImageView
                         android:id="@+id/ivLogoID"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_alignParentEnd="true"
-                        android:src="@drawable/chat_main"/>
+                        android:src="@drawable/chat_main" />
 
                     <Button
-                        android:layout_width="120dp"
-                        android:layout_height="40dp"
-                        android:text="Pair"
-                        android:textSize="16sp"
                         android:id="@+id/btPair"
-                        android:background="@drawable/hint_background"
-                        android:textColor="@color/colorPutih"
-                        android:onClick="save"
-                        android:textAllCaps="false"
-                        android:layout_alignParentBottom="true"/>
-
-                    <Button
                         android:layout_width="120dp"
                         android:layout_height="40dp"
-                        android:text="Cancel"
-                        android:textSize="16sp"
-                        android:id="@+id/btCancel"
+                        android:layout_alignParentBottom="true"
                         android:background="@drawable/hint_background"
-                        android:textColor="@color/colorPutih"
                         android:onClick="save"
+                        android:text="Pair"
                         android:textAllCaps="false"
+                        android:textColor="@color/colorPutih"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btCancel"
+                        android:layout_width="120dp"
+                        android:layout_height="40dp"
                         android:layout_alignParentRight="true"
-                        android:layout_alignParentBottom="true"/>
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/hint_background"
+                        android:onClick="save"
+                        android:text="Cancel"
+                        android:textAllCaps="false"
+                        android:textColor="@color/colorPutih"
+                        android:textSize="16sp" />
 
                 </RelativeLayout>
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
         </LinearLayout>
 

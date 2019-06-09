@@ -6,7 +6,7 @@ public class Question {
     private String question;
     private String pairQuestion;
 
-    public Question(){
+    public Question() {
         setId(0);
         setQuestion("");
         setPairQuestion("");

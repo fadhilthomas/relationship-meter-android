@@ -1,14 +1,15 @@
 package com.lappungdev.relationshipmeter.activity;
 
 import android.content.Intent;
-import android.os.Handler;
-import android.support.transition.TransitionManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.transition.TransitionManager;
 
 import com.lappungdev.relationshipmeter.R;
 
@@ -43,9 +44,9 @@ public class SplashActivity extends AppCompatActivity {
                         visibleSubJudul = !visibleSubJudul;
                         tvSubJudul.setVisibility(visibleSubJudul ? View.VISIBLE : View.GONE);
                     }
-                },1000);
+                }, 1000);
             }
-        },1000);
+        }, 1000);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -53,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
                 startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 finish();
             }
-        },3000);
+        }, 3000);
 
     }
 }
